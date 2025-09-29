@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> form</title>
+    <style>
+        fieldset {
+                width: 60%;
+                margin: 0 auto; 
+                padding: 20px; 
+                border: 2px solid #868181; 
+                border-radius: 15px;
+        }
+        </style>
+
+</head>
+<body>
+    <form style="color:rgb(9, 9, 9);background-color:rgb(255, 253, 253);">
+    <fieldset style="color:black;background-color:rgb(207, 201, 201);">
+    <legend style="color: red;"><h1><strong> Registration Form</h1></strong></legend>
+        <label for="full-name">Fullname:</label>
+        <input type="text" id="full-name" name="full-name" required minlength="5" maxlength="30" placeholder="Enter your Fullname" value="">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address" autocomplete="email">
+         <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required  placeholder="Enter 10-digit phone number"  autocomplete="tel">
+         <br><br>
+
+         <label for="Gender">Gender</label>
+        <input type="radio" id="Gender" name="Gender" value="Male">
+        <label for="Gender">Male </label>
+        <input type="radio" id="Gender" name="Gender" value="Female">
+        <label for="Female">Female </label>
+        <br><br>
+
+        <label for="Age">Age :</label>
+        <input type="number" name="Age" id="Age">
+        <br><br>
+
+        <label for="birthday">Date of Birth :</label>
+        <input type="date" id="Date of Birth" name="Date of birth">
+        <br><br>
+
+        <label for="hobbies">Select your Hobbies :</label><br>
+        <label><input type="checkbox" name="hobby" value="reading"> Reading</label><br>
+        <label><input type="checkbox" name="hobby" value="traveling"> Traveling</label><br>
+        <label><input type="checkbox" name="hobby" value="gaming"> Gaming</label><br>
+        <label><input type="checkbox" name="hobby" value="cooking"> Cooking</label><br>
+        <label><input type="checkbox" name="hobby" value="sports"> Sports</label><br>
+
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required  minlength="6" placeholder="Enter your password">
+         <br><br>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required  minlength="6" placeholder="Confirm your password">
+         <br><br>
+
+        <button type="submit" onclick="alert('Submitted')" value="Submit">Submit</button>
+        <button type="reset" value="Reset">Reset</button>
+        </fieldset>
+    </form>
+</body>
+</html>
