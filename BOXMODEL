@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume Flexbox</title>
+  <style>
+    body {
+      background-color: #d0bad3;
+      text-align: center;
+      margin: 40px;
+      font-family: 'Poppins', sans-serif;
+    }
+    h1 {
+      color: #880e4f;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    .box {
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 20px;
+      border: 4px solid transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .rose-box {
+      background: linear-gradient(135deg, #ffe6f0, #f8bcd4);
+      border-color: #d81b60;
+      color: #4a0033;
+      box-shadow: 0 0 15px rgba(216, 27, 96, 0.3);
+    }
+    .rose-box h2 {
+      color: #ad1457;
+    }
+    .ocean-box {
+      background: linear-gradient(135deg, #e0f7fa, #81d4fa);
+      border: dashed 4px #0288d1;
+      border-color: #0288d1;
+      color: #00334d;
+      box-shadow: 0 0 15px rgba(2, 136, 209, 0.3);
+    }
+    .ocean-box h2 {
+      color: #01579b;
+    }
+    .box p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Perfume Paradise</h1>
+  <div class="box rose-box">
+    <h2>Rose Elegance</h2>
+    <p>
+      Experience the gentle touch of blooming roses with our <b>Rose Elegance</b> perfume.
+      A romantic floral fragrance with hints of vanilla and musk — perfect for every elegant moment.
+    </p>
+  </div>
+  <div class="box ocean-box">
+    <h2>Ocean Mist</h2>
+    <p>
+      Dive into the refreshing waves of <b>Ocean Mist</b> — a cool aquatic scent blending sea breeze,
+      citrus, and light amber tones to make you feel rejuvenated and free.
+    </p>
+  </div>
+
+</body>
+</html>
