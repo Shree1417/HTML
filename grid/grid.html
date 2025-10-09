@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Grid </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: #f3f6ff;
+    }
+
+    header {
+      text-align: center;
+      background: darkblue;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    section {
+      display: grid; 
+      
+      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-rows: 150px 100px;
+
+      row-gap: 20px;
+      column-gap: 20px;
+
+      justify-content: center; 
+
+      align-content: center;
+
+      background-color: #dce6f9;
+      padding: 20px;
+      border-radius: 10px;
+      min-height: 80vh;
+    }
+
+    .item {
+      background-color: #ffffff;
+      border: 2px solid #999;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .item1 {
+      grid-column: span 2;
+      background-color: #a8dadc;
+    }
+
+    .item2 {
+      grid-row: span 2;
+      background-color: #f4a261;
+    }
+
+    .item3 {
+      grid-area: 2 / 2 / 3 / 4; 
+      background-color: #e9c46a;
+    }
+    .item4 {
+      justify-self: end; 
+      background-color: #2a9d8f;
+      color: white;
+    }
+
+    .item5 {
+      align-self: center; 
+      background-color: #264653;
+      color: white;
+    }
+
+    .item6 {
+      order: -1;
+      background-color: #e76f51;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Grid Container & Item Properties</h1>
+    <p>Demonstration of all grid-related properties in one layout</p>
+  </header>
+
+  <section>
+    <div class="item item1"> Spans 2 Columns</div>
+    <div class="item item2"> Spans 2 Rows</div>
+    <div class="item item3"> Grid Area</div>
+    <div class="item item4"> Justify</div>
+    <div class="item item5"> Align</div>
+    <div class="item item6"> Order</div>
+  </section>
+</body>
+</html>
