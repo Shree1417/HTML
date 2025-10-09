@@ -1,0 +1,90 @@
+
+body {
+    margin: 0;
+    background-color: #f4f6fc;
+    color: #333;
+  }
+  header {
+    text-align: center;
+    background: #4c67f0;
+    color: white;
+    padding: 40px 20px;
+    border-bottom: 5px solid #ffcc00;
+  }
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+  }
+  .box {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  nav {
+    background: #222;
+    padding: 10px 0;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav li {
+    margin: 0 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  .about {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .about h2 {
+    color: #4c67f0;
+    margin-bottom: 20px;
+  }
+
+  .about p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    background: #4c67f0;
+    color: white;
+    padding: 15px;
+    border-top: 4px solid #ffcc00;
+  }

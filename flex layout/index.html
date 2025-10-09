@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexBox Layout Task</title>
+  <link rel="stylesheet" href="style.css">
+<style>
+  body {
+    margin: 0;
+    color: #333;
+    background-color: aquamarine;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  header {
+    text-align: center;
+    background: darkblue;
+    color: white;
+    padding: 20px 20px;
+    border-bottom: 2px solid #ff0b03;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  nav {
+    background: #222;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav li {
+    margin: 0 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ffcc00;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(238, 241, 251, 0.9);
+  }
+
+  .box {
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  .about {
+    background-color: rgba(255,255,255,0.9);
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .about h2 {
+    color: #4c67f0;
+    margin-bottom: 20px;
+  }
+
+  .about p {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    background: #4c67f0;
+    color: white;
+    padding: 15px;
+    border-top: 2px solid #ff0000;
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Kumaraguru College of Liberal Arts and Science</h1>
+    <p>Explore courses, apply online, and shape your future with us.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="" style="color:#00ffcc;">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://kct.ac.in/" target="_blank">Admissions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="flex-container">
+    <div class="box">
+      <h2 style="color:darkblue;">Undergraduate Programs</h2>
+      <p>We offer a variety of undergraduate programs designed to provide strong academic foundations.</p>
+    </div>
+
+    <div class="box">
+      <h2 style="color:#e63946;">Postgraduate Courses</h2>
+      <p>Our postgraduate courses aim to develop critical thinking and advanced research skills.</p>
+    </div>
+
+    <div class="box">
+      <h2 style="color:#008000;">Research Opportunities</h2>
+      <p>Kumaraguru College encourages innovative research projects in multiple disciplines.</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Kumaraguru College</h2>
+    <p>Kumaraguru College is a premier institution dedicated to academic excellence and research. It offers quality programs across disciplines and promotes innovation, leadership, and community engagement. The university provides a vibrant environment that nurtures student potential and career success.</p>
+  </section>
+
+  <footer>
+    <div>
+      <h3 id="contact">Contact</h3>
+      <p>kct@gmail.com | 9876543210 | www.kct.ac.in</p>
+      <p>&copy; Kumaraguru College 2025</p>
+    </div>
+  </footer>
+</body>
+</html>
