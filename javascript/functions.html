@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Functions and Scope</title>
+</head>
+<body style="text-align: center;">
+  <h1>Functions and Scope</h1>
+  <h3>Open Console (F12) to View Output</h3>
+
+  <script>
+    console.log("=== JavaScript Functions and Scope ===");
+
+    //Function Declaration _Add two numbers
+    function add(a, b) {
+      let sum = a + b;
+      console.log("Addition:", sum);
+    }
+    add(10, 5); // Call the function
+
+    // Function Expression _ Multiply two numbers
+    const multiply = function (x, y) {
+      let product = x * y;
+      console.log("Multiplication:", product);
+    };
+    multiply(4, 3);
+
+    // Arrow Function Subtract two numbers
+    const subtract = (a, b) => {
+      console.log("Subtraction:", a - b);
+    };
+    subtract(20, 8);
+
+    // Function with parameters and return value
+    function divide(num1, num2) {
+      if (num2 === 0) {
+        console.log("Cannot divide by zero!");
+        return null;
+      }
+      return num1 / num2;
+    }
+    let result = divide(10, 2);
+    console.log("Division Result (Returned Value):", result);
+
+    // Global & Local Scope
+    let globalVar = "I am Global";
+
+    function showScope() {
+      let localVar = "I am Local";
+      console.log("Inside function:");
+      console.log(globalVar); 
+      console.log(localVar);  
+    }
+
+    showScope();
+
+    console.log("Outside function:");
+    console.log(globalVar);  
+
+    console.log("Note: 'localVar' is only accessible inside the function.");
+  </script>
+</body>
+</html>
