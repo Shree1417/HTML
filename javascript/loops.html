@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Loops</title>
+</head>
+<body style="text-align: center;">
+  <h1> Loops For While DoWhileStatements</h1>
+  <h3>Open Console to See Loop Outputs</h3>
+
+  <script>
+    console.log("=== JavaScript Loop Examples ===");
+
+    // FOR LOOP Print numbers 1 to 10
+    console.log("\n For Loop: Print numbers 1 to 10");
+    for (let i = 1; i <= 10; i++) {
+      console.log(i);
+    }
+
+    //  WHILE LOOP Print numbers 1 to 5
+    console.log("\n While Loop: Print numbers 1 to 5");
+    let j = 1;
+    while (j <= 5) {
+      console.log(j);
+      j++;
+    }
+
+    // DO-WHILE LOOP Print numbers 1 to 3
+    console.log("\n Do-While Loop: Print numbers 1 to 3");
+    let k = 1;
+    do {
+      console.log(k);
+      k++;
+    } while (k <= 3);
+
+    // CONTINUE and BREAK Skip 5, Stop at 8
+    console.log("\n For Loop with continue and break");
+    for (let n = 1; n <= 10; n++) {
+      if (n === 5) {
+        console.log("Skipping 5");
+        continue;  // Skips this iteration
+      }
+      if (n === 8) {
+        console.log("Stopping at 8");
+        break;     // Exits the loop
+      }
+      console.log(n);
+    }
+
+  </script>
+</body>
+</html>
