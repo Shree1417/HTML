@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Basics</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #a8e6cf, #56ab2f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 360px;
+      transition: 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      color: #2d3436;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    button {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin: 6px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #27ae60;
+      transform: scale(1.08);
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #dff9fb;
+      border: 2px solid #00b894;
+      border-radius: 10px;
+      min-height: 50px;
+      text-align: left;
+      font-weight: 500;
+      color: #2d3436;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h2>JS Array Basics </h2>
+    <p>Check console for output</p>
+    <button onclick="addBirds()">Use push()</button>
+    <button onclick="removeLast()">Use pop()</button>
+    <button onclick="addAtStart()">Use unshift()</button>
+    <button onclick="removeFirst()">Use shift()</button>
+    <button onclick="printBirds()">Print Array (for loop)</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    let birds = ["Parrot", "Eagle", "Sparrow"];
+
+    function showArray() {
+      document.getElementById("output").innerHTML = "Birds: " + birds.join(", ");
+    }
+
+    // push()
+    function addBirds() {
+      birds.push("Peacock");
+      showArray();
+      console.log("After push:", birds);
+    }
+
+    // pop()
+    function removeLast() {
+      birds.pop();
+      showArray();
+      console.log("After pop:", birds);
+    }
+
+    // unshift()
+    function addAtStart() {
+      birds.unshift("Pigeon");
+      showArray();
+      console.log("After unshift:", birds);
+    }
+
+    // shift()
+    function removeFirst() {
+      birds.shift();
+      showArray();
+      console.log("After shift:", birds);
+    }
+
+    // for loop
+    function printBirds() {
+      let text = "All Birds:<br>";
+      for (let i = 0; i < birds.length; i++) {
+        text += birds[i] + "<br>";
+        console.log(birds[i]);
+      }
+      document.getElementById("output").innerHTML = text;
+    }
+
+    showArray();
+  </script>
+</body>
+</html>
