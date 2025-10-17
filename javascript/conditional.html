@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditionals and Switch in JavaScript</title>
+</head>
+<body>
+  <h1>Conditionals and Switch in JavaScript</h1>
+  <h3>Check Console (F12) </h3>
+
+  <script>
+    console.log("Conditionals, Switch & Operators");
+
+    // Arithmetic and Logical Operators
+    let a = 10, b = 5;
+
+    console.log("\n=== Arithmetic Operators ===");
+    console.log("Addition (+):", a + b);
+    console.log("Subtraction (-):", a - b);
+    console.log("Multiplication (*):", a * b);
+    console.log("Division (/):", a / b);
+    console.log("Modulus (%):", a % b);
+
+    console.log("\n=== Comparison Operators ===");
+    console.log("a == '10':", a == '10');  
+    console.log("a === '10':", a === '10');
+
+    console.log("\n=== Logical Operators ===");
+    console.log("(a > b) && (a != 0):", (a > b) && (a != 0)); // AND
+    console.log("(a < b) || (b != 0):", (a < b) || (b != 0)); // OR
+
+    // Conditional: Check if a number is positive, negative, or zero
+    console.log("\n=== Check if Number is Positive or Negative ===");
+    let number = -7;  // Try changing this value
+
+    if (number > 0) {
+      console.log(number + " is Positive");
+    } else if (number < 0) {
+      console.log(number + " is Negative");
+    } else {
+      console.log(number + " is Zero");
+    }
+
+    // Switch Case
+    console.log("\n=== Switch Case: Days of the Week ===");
+    let day = 3;  // 1 = Monday, 2 = Tuesday, etc.
+
+    switch (day) {
+      case 1:
+        console.log("Monday");
+        break;
+      case 2:
+        console.log("Tuesday");
+        break;
+      case 3:
+        console.log("Wednesday");
+        break;
+      case 4:
+        console.log("Thursday");
+        break;
+      case 5:
+        console.log("Friday");
+        break;
+      case 6:
+        console.log("Saturday");
+        break;
+      case 7:
+        console.log("Sunday");
+        break;
+      default:
+        console.log("Invalid day number");
+    }
+  </script>
+</body>
+</html>
