@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+    .output {
+      background-color: #e6f7ff;
+      border: 1px solid #99d6ff;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    h2, h3 {
+      color: #0059b3;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align: center;">Objects: Creation, Properties, Methods</h2>
+
+  <div class="output" id="original"></div>
+  <div class="output" id="modified"></div>
+  <div class="output" id="hello"></div>
+  <div class="output" id="city"></div>
+
+  <script>
+    let person = {
+      name: "Poorna",
+      age: 20,
+      sayHello: function() {
+        return `Hello! My name is ${this.name} and I am ${this.age} years old.`;
+      }
+    };
+
+    document.getElementById("original").innerHTML = ` Name: ${person.name} <br>  Age: ${person.age}`;
+
+    person.name = "Shree";
+    person.age = 22;
+    document.getElementById("modified").innerHTML = `Modified Name: ${person.name} <br> Modified Age: ${person.age}`;
+
+    document.getElementById("hello").innerHTML = person.sayHello();
+
+    person.city = "Chennai";
+    person.sayCity = function() {
+      return `I live in ${this.city}.`;
+    };
+    document.getElementById("city").innerHTML = person.sayCity();
+  </script>
+</body>
+</html>
