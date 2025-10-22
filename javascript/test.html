@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array</title>
+</head>
+<body style="text-align: center;">
+    
+  <div class="container">
+    <h2>Js Array Test</h2>
+
+    <button onclick="addBirds()">Use push()</button>
+    <button onclick="removeLast()">Use pop()</button>
+    <button onclick="addAtStart()">Use unshift()</button>
+    <button onclick="removeFirst()">Use shift()</button>
+    <button onclick="findIndex()">Use indexOf()</button>
+    <button onclick="findBird()">Use find()</button>
+    <button onclick="printBirds()">Print All Element</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+
+    let birds = ["Parrot", "Eagle", "Sparrow"];
+
+    function showArray() {
+      document.getElementById("output").innerHTML = "Birds: " + birds.join(", ");
+    }
+
+    function addBirds() {
+      birds.push("Peacock");
+      showArray();
+      console.log("After push:", birds);
+    }
+
+    function removeLast() {
+      birds.pop();
+      showArray();
+      console.log("After pop:", birds);
+    }
+
+    function addAtStart() {
+      birds.unshift("Pigeon");
+      showArray();
+      console.log("After unshift:", birds);
+    }
+
+    function removeFirst() {
+      birds.shift();
+      showArray();
+      console.log("After shift:", birds);
+    }
+
+    function findIndex() {
+      let index = birds.indexOf("Sparrow");
+      document.getElementById("output").innerHTML = 
+        "Index of 'Sparrow' is: " + index + "<br><br>Birds: " + birds.join(", ");
+      console.log("Index of Sparrow:", index);
+    }
+
+    function findBird() {
+      let found = birds.find(bird => bird.startsWith("P"));
+      document.getElementById("output").innerHTML = 
+        "First bird starting with 'P': " + found + "<br><br>Birds: " + birds.join(", ");
+      console.log("Found bird:", found);
+    }
+
+    function printBirds() {
+      let text = "All Birds:<br>";
+      for (let i = 0; i < birds.length; i++) {
+        text += (i + 1) + ". " + birds[i] + "<br>";
+        console.log(birds[i]);
+      }
+      document.getElementById("output").innerHTML = text;
+    }
+
+    showArray();
+  </script>
+</body>
+</html>
