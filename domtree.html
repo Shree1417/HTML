@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dom Tree Method</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color:blueviolet;
+      text-align: center;
+      margin-top: 60px;
+      color: black;
+    }
+    #myText {
+      color: black;
+      font-size: 20px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: purple;
+      color: pink;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color:purple;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>DOM Tree Method</h2>
+    <p id="textPara">This is the sample paragraph.</p>
+  <button onclick="changeText()">Change Heading Text</button>
+  <button onclick="changeStyle()">Change Style</button>
+  <button onclick="changeParagraph()">Change Paragraph Content</button>
+  <button onclick="changeColorAndFont()">Change Color & Font Size</button>
+
+  <script>
+     function changeText() {
+      document.getElementById("heading").innerText = "Hello This is My Task Page !";
+    }
+
+    function changeStyle() {
+      let element = document.getElementById("heading");
+      element.style.backgroundColor = "purple";
+      element.style.padding = "10px";
+      element.style.borderRadius = "10px";
+    }
+
+
+    function changeParagraph() {
+      document.getElementById("myText").innerHTML = "Thank you For Visiting My WebPage!";
+    }
+
+    function changeColorAndFont() {
+      let para = document.getElementById("myText");
+      para.style.color = "crimson";
+      para.style.fontSize = "24px";
+    }
+  </script>
+</body>
+</html>
