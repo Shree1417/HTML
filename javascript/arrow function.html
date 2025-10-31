@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>traveler your Destination</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #06a2ea, #ff005d);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff00a6;
+      color: black;
+      text-align: center;
+      padding: 1.rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #2be6ff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #023e8a;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    button {
+      background: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin-top: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0066ec;
+    }
+
+    .output {
+      margin-top: 1rem;
+      background: #eef6fb;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      white-space: pre-wrap;
+      font-family: "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WanderEase Travel Planner</h1>
+    <p>practicing JavaScript Arrow Functions</p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Register Traveler</h2>
+      <label>Name:</label>
+      <input type="text" id="travelerName" placeholder="Enter your name" />
+      <label>Destination:</label>
+      <input type="text" id="travelerDestination" placeholder="Enter destination" />
+      <label>Days of Stay:</label>
+      <input type="number" id="travelDays" placeholder="Enter days" />
+      <button onclick="registerTraveler()">Register</button>
+      <div id="travelerOutput" class="output"></div>
+    </section>
+
+    <section>
+      <h2>Greet Traveler</h2>
+      <button onclick="greetTraveler()">Default Greet</button>
+      <button onclick="greetTraveler('Shree', 'Happy Journey')">Custom Greet</button>
+      <div id="greetOutput" class="output"></div>
+    </section>
+
+    <section>
+      <h2>Travel Activities</h2>
+      <button onclick="showActivities()">Show Activities</button>
+      <div id="activityOutput" class="output"></div>
+    </section>
+
+    <section>
+      <h2>Calculate Trip Budget </h2>
+      <button onclick="calculateBudget()">Calculate budget</button>
+      <div id="budgetOutput" class="output"></div>
+    </section>
+  </main>
+
+  <script>
+    let traveler;
+
+    const registerTraveler = () => {
+      const name = document.getElementById("travelerName").value || "unkown name";
+      const destination = document.getElementById("travelerDestination").value || "Unknown Destination";
+      const days = document.getElementById("travelDays").value || "N/A";
+
+      traveler = { name, destination, days, activities: ["Sightseeing", "Hiking", "Food Tour"] };
+
+      document.getElementById("travelerOutput").textContent = 
+        `Traveler Registered Successfully!
+Name: ${traveler.name}
+Destination: ${traveler.destination}
+Days of Stay: ${traveler.days}`;
+    };
+
+        const greet = (name = "Traveler", message = "Welcome to Wander The Way") =>
+      `${message}, ${name}!`;
+
+    const greetTraveler = (name, message) => {
+      const message = greet(name, message);
+      document.getElementById("greetOutput").textContent = message;
+
+    const showActivities = () => {
+      if (!traveler) {
+        document.getElementById("activityOutput").textContent = "Please register a traveler first!";
+        return;
+      }
+
+      const { name, activities } = traveler;
+      const [first, second] = activities;
+      const extendedActivities = [...activities, "Shopping", "Photography"];
+
+      document.getElementById("activityOutput").textContent =
+        `Traveler: ${name}
+First Activity: ${first}
+Second Activity: ${second}
+Full Activity List: ${extendedActivities.join(", ")}`;
+    };
+
+    const totalBudget = (...costs) => costs.reduce((sum, cost) => sum + cost, 0);
+    const calculateBudget = () => {
+      const expenses = [1500, 8000, 5000, 2000];
+      const total = totalBudget(...expenses);
+      document.getElementById("budgetOutput").textContent =
+        `Expenses: ${expenses.join(", ")}
+Average Expense: ₹${average.toFixed(2)}`;
+    };
+  </script>
+</body>
+</html>
