@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login - Dom Tree Method 2</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #ed8cdd, #b50fe8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background-color:rgb(237, 18, 91);
+      padding: 25px 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #000000;
+      font-size: 20px;
+    }
+
+    button {
+      width: 95%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      background-color: #5ae8f2;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4b85e6;
+    }
+
+    #typingOutput {
+      color: #0066cc;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    #output {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>User Login</h2>
+    <form id="userForm">
+      <input type="text" id="user" placeholder="Enter Username" required />
+      <p id="typeShow">Type here </p>
+      <input type="password" id="Password" placeholder="Enter Password" required />
+      <button type="submit">Sign In</button>
+    </form>
+    <button id="clearBtn">Clear</button>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+   
+    const userInput = document.getElementById("user");
+    const typeShow = document.getElementById("typeShow");
+
+    userInput.addEventListener("input", function() {
+      typeShow.textContent = "Typing: " + this.value;
+    });
+
+
+    const form = document.getElementById("userForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); 
+      const username = userInput.value;
+      const password = document.getElementById("pass").value;
+
+      if (username === "user" && password === "pass123") {
+        msg.textContent = "Access Granted! Welcome " + username + ".";
+        msg.style.color = "green";
+      } else {
+        msg.textContent = "Login Failed! Please try again.";
+        msg.style.color = "red";
+      }
+    });
+
+    const clearBtn = document.getElementById("clearBtn");
+    clearBtn.addEventListener("click", function() {
+      userInput.value = "";
+      document.getElementById("pass").value = "";
+      typeShow.textContent = "Typing: ";
+      msg.textContent = "";
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Events Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #message { margin-top: 10px; color: green; }
+  </style>
+</head>
+<body>
+
+  <h2>DOM Events Demo</h2>
+  
+  <button id="clickBtn">Click Me</button>
+  <p id="clickOutput"></p>
+
+  <label for="nameInput">Type your name:</label>
+  <input type="text" id="nameInput" />
+  <p id="inputOutput"></p>
+
+  <form id="myForm">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" required />
+    <button type="submit">Submit</button>
+  </form>
+  <p id="formMessage"></p>
+  
+  <script>
+   
+    const clickBtn = document.getElementById("clickBtn");
+    const clickOutput = document.getElementById("clickOutput");
+
+    clickBtn.addEventListener("click", () => {
+      clickOutput.textContent = "Button was clicked!";
+    });
+
+    const nameInput = document.getElementById("nameInput");
+    const inputOutput = document.getElementById("inputOutput");
+    
+    nameInput.addEventListener("input", function () {
+      inputOutput.textContent = "Hello, " + this.value;
+    });
+    const form = document.getElementById("myForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      formMessage.textContent = "Form submitted with email: " + email;
+    });
+  </script>
+
+</body>
+</html>
+
