@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript sync vs Async Practice</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #07fbe2, #00ff99);
+      color: #222;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    h1 {
+      color: #c50048;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 8px 14px;
+      margin: 6px;
+      border: none;
+      border-radius: 6px;
+      background: #6f00ff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1565c0;
+    }
+
+    p {
+      font-size: 20px;
+    }
+    #output {
+      margin-top: 15px;
+      background: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sync & Async | Callback | Promise</h1>
+
+  <button onclick="runSyncAsync()">Run Sync vs Async</button>
+  <button onclick="runTimeout()">Start setTimeout</button>
+  <button onclick="runInterval()">Start setInterval</button>
+  <button onclick="runCallback()">Use Callback</button>
+  <button onclick="runPromise()">Use Promise</button>
+
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function showSyncAsync() {
+      output.innerHTML = "<b>Synchronous vs Asynchronous:</b><br>";
+
+      console.log("Synchronous Start");
+      output.innerHTML += "1. Synchronous Start<br>";
+
+      setTimeout(() => {
+        console.log("Asynchronous after 2 sec");
+        output.innerHTML += "2. Asynchronous(after 2 sec)<br>";
+      }, 2000);
+
+      console.log("Synchronous End");
+      output.innerHTML += "3. Synchronous End<br>";
+    }
+
+    function startTimeout() {
+      output.innerHTML = "Waiting for 2 seconds...<br>";
+      setTimeout(() => {
+        output.innerHTML += "Helloo..!<br>";
+      }, 2000);
+    }
+
+    function startInterval() {
+      output.innerHTML = "Counter starts...<br>";
+      let count = 1;
+      const timer = setInterval(() => {
+        output.innerHTML += `Count: ${count}<br>`;
+        count++;
+        if (count > 5) {
+          clearInterval(timer);
+          output.innerHTML += "Counter stopped <br>";
+        }
+      }, 1000);
+    }
+
+    function greet(name, callback) {
+      output.innerHTML = `Hello, ${name}!<br>`;
+      callback();
+    }
+
+    function useCallback() {
+      greet("Everyone", function() {
+        output.innerHTML += "Welcome to my website!<br>";
+      });
+    }
+
+    function usePromise() {
+      output.innerHTML = "Promise Running...<br>";
+
+      const myPromise = new Promise((resolve, reject) => {
+        let success = Math.random() > 0.5; 
+        setTimeout(() => {
+          if (success) {
+            resolve("Promise resolved successfully!");
+          } else {
+            reject(" Promise rejected!");
+          }
+        }, 1500);
+      });
+
+      myPromise
+        .then(result => {
+          output.innerHTML += result + "<br>";
+        })
+        .catch(error => {
+          output.innerHTML += error + "<br>";
+        });
+    }
+  </script>
+
+</body>
+</html>
