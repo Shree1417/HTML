@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Local & Session Storage</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f9d423, #ff4e50);
+      text-align: center;
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 17px;
+    }
+    .shop-container {
+      background-color: #fff;
+      width: 70%;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      padding: 25px;
+    }
+    input {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 16px;
+      font-size: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+    .btn-local { background-color: #27ae60; }
+    .btn-local:hover { background-color: #1e8449; }
+    .btn-session { background-color: #e67e22; }
+    .btn-session:hover { background-color: #ca6f1e; }
+    .btn-clear { background-color: #c0392b; }
+    .btn-clear:hover { background-color: #922b21; }
+    .cart-box {
+      margin-top: 25px;
+      padding: 15px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    h3 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    .cart-items {
+      font-size: 17px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+  <p>Use LocalStorage for permanent cart and SessionStorage for temporary cart.</p>
+
+  <div class="shop-container">
+    <input type="text" id="productInput" placeholder="Enter product name (eg: Shoes, Watch,...)" />
+    <br>
+    <button class="btn-local" onclick="addLocal()">Add to Local Cart</button>
+    <button class="btn-session" onclick="addSession()">Add to Session Cart</button>
+    <button class="btn-clear" onclick="clearAll()">Clear All Carts</button>
+
+    <div class="cart-box">
+      <h3> LocalStorage Cart (Saved Products)</h3>
+      <ul id="localCart" class="cart-items"></ul>
+
+      <h3>SessionStorage Cart (Temporary Products)</h3>
+      <ul id="sessionCart" class="cart-items"></ul>
+    </div>
+  </div>
+
+  <script>
+    const localCart = document.getElementById("localCart");
+    const sessionCart = document.getElementById("sessionCart");
+    const input = document.getElementById("productInput");
+
+    // Load existing data 
+    window.onload = () => {
+      displayLocal();
+      displaySession();
+    };
+
+    // Add item to LocalStorage
+    function addLocal() {
+      const product = input.value.trim();
+      if (!product) return alert("Please enter a product name!");
+
+      let cart = JSON.parse(localStorage.getItem("localCart")) || [];
+      cart.push(product);
+      localStorage.setItem("localCart", JSON.stringify(cart));
+      input.value = "";
+      displayLocal();
+    }
+
+    // Add item to SessionStorage
+    function addSession() {
+      const product = input.value.trim();
+      if (!product) return alert("Please enter a product name!");
+
+      let cart = JSON.parse(sessionStorage.getItem("sessionCart")) || [];
+      cart.push(product);
+      sessionStorage.setItem("sessionCart", JSON.stringify(cart));
+      input.value = "";
+      displaySession();
+    }
+
+    // Display Local Cart
+    function displayLocal() {
+      const cart = JSON.parse(localStorage.getItem("localCart")) || [];
+      localCart.innerHTML = cart.length
+        ? cart.map((item, i) => `<li>${i + 1}. ${item}</li>`).join("")
+        : "<li>No items in LocalStorage cart.</li>";
+    }
+
+    // Display Session Cart
+    function displaySession() {
+      const cart = JSON.parse(sessionStorage.getItem("sessionCart")) || [];
+      sessionCart.innerHTML = cart.length
+        ? cart.map((item, i) => `<li>${i + 1}. ${item}</li>`).join("")
+        : "<li>No items in SessionStorage cart.</li>";
+    }
+
+    // Clear both storages
+    function clearAll() {
+      localStorage.removeItem("localCart");
+      sessionStorage.removeItem("sessionCart");
+      displayLocal();
+      displaySession();
+    }
+  </script>
+</body>
+</html>
