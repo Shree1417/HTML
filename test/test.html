@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch, Promise, Async & Await</title>
+</head>
+<body>
+    
+  <h2>Fetch, Promise, Async & Await</h2>
+
+  <button onclick="runPromise()">Run Promise </button>
+  <button onclick="runFakeFetch()">Run Fetch </button>
+  <button onclick="runAsyncAwait()">Run Async/Await </button>
+
+  <div id="output">Click the button...</div>
+
+  <script>
+
+    function runPromise() {
+      document.getElementById("output").innerText = "Running Promise example...";
+
+      let promise = new Promise((resolve, reject) => {
+        let success = true;
+
+        setTimeout(() => {
+          if (success) {
+            resolve("Promise resolved successfully after 2 seconds!");
+          } else {
+            reject("Promise rejected!");
+          }
+        }, 2000);
+      });
+
+      promise
+        .then(result => {
+          document.getElementById("output").innerText = result;
+        })
+        .catch(error => {
+          document.getElementById("output").innerText = error;
+        });
+    }
+
+    function runFakeFetch() {
+      document.getElementById("output").innerText = "Fetch locally...";
+
+      const fakeData = {
+        id: 1,
+        name: "poorna",
+        email: "shree@gmail.com",
+        city: "Coimbatore"
+      };
+
+      function fakeFetch() {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let success = true;
+            if (success) {
+              resolve({ json: () => fakeData });
+            } else {
+              reject("Error! Unable to fetch data.");
+            }
+          }, 1500);
+        });
+      }
+
+      fakeFetch()
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("output").innerText =
+            " Fetched successfully!\n\n" + JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          document.getElementById("output").innerText = error;
+        });
+    }
+
+    async function runAsyncAwait() {
+      document.getElementById("output").innerText = "Loading data with Async/Await...";
+
+      try {
+        const simulateData = new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({
+              id: 101,
+              title: "hi,helloo",
+              description: "This data was fetched using async/await."
+            });
+          }, 1500);
+        });
+
+        const data = await simulateData;
+
+        document.getElementById("output").innerText =
+          " Data fetched using async/await:\n\n" + JSON.stringify(data, null, 2);
+      } 
+      catch (error) {
+        document.getElementById("output").innerText = " Error: " + error;
+      }
+    }
+  </script>
+
+</body>
+</html>
