@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback, Promise & Async-Await </title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #2f5270, #13b5bd);
+      text-align: center;
+      padding: 40px;
+      color: #0afaee;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #f91f93;
+      color: rgb(2, 2, 2);
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Callback, Promise & Async/Await</h1>
+  <p id="output">Click a button to see results.</p>
+  <button onclick="useCallback()">Use Callback</button>
+  <button onclick="usePromise()">Use Promise (then/catch)</button>
+  <button onclick="useAsyncAwait()">Use Async/Await</button>
+
+  <script>
+    
+    function greetUser(callback) {
+      console.log("Fetching user data...");
+      setTimeout(() => {
+        callback("Hello from Callback!");
+      }, 1000);
+    }
+
+    function useCallback() {
+      greetUser((message) => {
+        document.getElementById("output").textContent = message;
+      });
+    }
+
+    function fetchData() {
+      return new Promise((resolve, reject) => {
+        let success = Math.random() > 0.5;
+        setTimeout(() => {
+          if (success) {
+            resolve("Promise Resolved: Data fetched successfully!");
+          } else {
+            reject("Promise Rejected: Something went wrong!");
+          }
+        }, 1000);
+      });
+    }
+
+    function usePromise() {
+      fetchData()
+        .then((result) => {
+          document.getElementById("output").textContent = result;
+        })
+        .catch((error) => {
+          document.getElementById("output").textContent = error;
+        });
+    }
+
+    async function useAsyncAwait() {
+      try {
+        let result = await fetchData();
+        document.getElementById("output").textContent = result;
+      } catch (error) {
+        document.getElementById("output").textContent = error;
+      }
+    }
+  </script>
+
+</body>
+</html>
