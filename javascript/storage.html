@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Storage Practice Task</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to right, #23cfff, #fc09bb);
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .main-box {
+      background-color: rgb(26, 225, 158);
+      color: #333;
+      width: 70%;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      padding: 25px;
+    }
+    input {
+      width: 60%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #0df4cd;
+      margin: 10px 0;
+      font-size: 15px;
+    }
+    button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #0d0d0d;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+    .btn-save-local { background-color: #5e89e6; }
+    .btn-save-local:hover { background-color: #3086ea; }
+    .btn-save-session { background-color: #13dffa; }
+    .btn-save-session:hover { background-color: #11ddf8; }
+    .btn-clear { background-color: #f91ee3; }
+    .btn-clear:hover { background-color: #fb018f; }
+    .storage-box {
+      margin-top: 25px;
+      background-color: #f4f2f2;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    h3 {
+      color: #7b1dba;
+      text-align: center;
+    }
+      .cart-items {
+      font-size: 17px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>LocalStorage & SessionStorage </h1>
+  <p>Enter an item to save it in Local or Session Storage.</p>
+
+  <div class="main-box">
+    <input type="text" id="itemInput" placeholder="Type something to store..." />
+    <br>
+    <button class="btn-save-local" onclick="saveLocal()">Save to Local</button>
+    <button class="btn-save-session" onclick="saveSession()">Save to Session</button>
+    <button class="btn-clear" onclick="clearStorage()">Clear Both</button>
+
+    <div class="storage-box">
+      <h3>Local Storage Items</h3>
+      <ul id="localList"></ul>
+
+      <h3>Session Storage Items</h3>
+      <ul id="sessionList"></ul>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("itemInput");
+    const localList = document.getElementById("localList");
+    const sessionList = document.getElementById("sessionList");
+   
+    window.onload = () => {
+      showLocal();
+      showSession();
+    };
+
+       function saveLocal() {
+      const value = input.value.trim();
+      if (!value) return alert("Please enter something!");
+      let data = JSON.parse(localStorage.getItem("localItems")) || [];
+      data.push(value);
+      localStorage.setItem("localItems", JSON.stringify(data));
+      input.value = "";
+      showLocal();
+    }
+
+       function saveSession() {
+      const value = input.value.trim();
+      if (!value) return alert("Please enter something!");
+      let data = JSON.parse(sessionStorage.getItem("sessionItems")) || [];
+      data.push(value);
+      sessionStorage.setItem("sessionItems", JSON.stringify(data));
+      input.value = "";
+      showSession();
+    }
+
+       function showLocal() {
+      const data = JSON.parse(localStorage.getItem("localItems")) || [];
+      localList.innerHTML = data.length
+        ? data.map((item, i) => `<li>${i + 1}. ${item}</li>`).join("")
+        : "<li>No items stored in LocalStorage</li>";
+    }
+
+       function showSession() {
+      const data = JSON.parse(sessionStorage.getItem("sessionItems")) || [];
+      sessionList.innerHTML = data.length
+        ? data.map((item, i) => `<li>${i + 1}. ${item}</li>`).join("")
+        : "<li>No items stored in SessionStorage</li>";
+    }
+
+       function clearStorage() {
+      localStorage.removeItem("localItems");
+      sessionStorage.removeItem("sessionItems");
+      showLocal();
+      showSession();
+    }
+  </script>
+</body>
+</html>
