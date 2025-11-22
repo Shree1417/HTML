@@ -1,3 +1,4 @@
+
 USE SLA;
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY,
@@ -7,10 +8,10 @@ CREATE TABLE employees (
 );
 DESC employees;
 INSERT INTO employees (emp_id, name, department, salary) VALUES
-(1, 'Arsha', 'HR', 30000),
-(2, 'Banu', 'Sales', 35000),
-(3, 'Chakra', 'HR', 40000),
-(4, 'Dharshu', 'IT', 60000),
+(1, 'Arshu', 'HR', 40000),
+(2, 'Banu', 'Sales', 25000),
+(3, 'Charu', 'HR', 40000),
+(4, 'Dharshu', 'IT', 50000),
 (5, 'Emily', 'IT', 55000);
 
 CREATE VIEW hr_employees AS
