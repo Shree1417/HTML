@@ -38,74 +38,74 @@ background:#ff1a66;
 
 <div class="container">
 
-<h2>💖 A Small Love Quiz For You Abbu ma 💖</h2>
-<p>Answer honestly kunjuuuuuuu MAaaaaaa ❤️</p>
+<h2>💖 A Small Love Quiz For You Abbu Ma 💖</h2>
+<p>Answer honestly kunjuuuuu MAaaaaaa ❤️</p>
 
-<form id="quiz">
+<form id="quiz" action="https://formspree.io/f/xojkqkkj" method="POST">
 
 <p>1. Do you think we came into each other's life for a reason?</p>
-<input type="radio" name="q1" value="1"> Yes
-<input type="radio" name="q1" value="0"> No
+<input type="radio" name="q1" value="Yes"> Yes
+<input type="radio" name="q1" value="No"> No
 
 <p>2. Do you miss me when we don't talk?</p>
-<input type="radio" name="q2" value="1"> Yes
-<input type="radio" name="q2" value="0"> No
+<input type="radio" name="q2" value="Yes"> Yes
+<input type="radio" name="q2" value="No"> No
 
 <p>3. Have you ever worried about losing me?</p>
-<input type="radio" name="q3" value="1"> Yes
-<input type="radio" name="q3" value="0"> No
+<input type="radio" name="q3" value="Yes"> Yes
+<input type="radio" name="q3" value="No"> No
 
 <p>4. Do you think our connection is special compared to your past relationships?</p>
-<input type="radio" name="q4" value="1"> Yes
-<input type="radio" name="q4" value="0"> No
+<input type="radio" name="q4" value="Yes"> Yes
+<input type="radio" name="q4" value="No"> No
 
 <p>5. Do you like spending time with me and wish we had more time together?</p>
-<input type="radio" name="q5" value="1"> Yes
-<input type="radio" name="q5" value="0"> No
+<input type="radio" name="q5" value="Yes"> Yes
+<input type="radio" name="q5" value="No"> No
 
-<p>6. Do you think I made a positive impact in your life?</p>
-<input type="radio" name="q6" value="1"> Yes
-<input type="radio" name="q6" value="0"> No
+<p>6. Do you think I've made a positive impact in your life?</p>
+<input type="radio" name="q6" value="Yes"> Yes
+<input type="radio" name="q6" value="No"> No
 
 <p>7. Do you feel comfortable being yourself with me?</p>
-<input type="radio" name="q7" value="1"> Yes
-<input type="radio" name="q7" value="0"> No
+<input type="radio" name="q7" value="Yes"> Yes
+<input type="radio" name="q7" value="No"> No
 
 <p>8. Have I supported you when you were struggling?</p>
-<input type="radio" name="q8" value="1"> Yes
-<input type="radio" name="q8" value="0"> No
+<input type="radio" name="q8" value="Yes"> Yes
+<input type="radio" name="q8" value="No"> No
 
 <p>9. Have you ever wanted to tell me something but didn't?</p>
-<input type="radio" name="q9" value="1"> Yes
-<input type="radio" name="q9" value="0"> No
+<input type="radio" name="q9" value="Yes"> Yes
+<input type="radio" name="q9" value="No"> No
 
 <p>10. Have you felt that my love and care for you is genuine?</p>
-<input type="radio" name="q10" value="1"> Yes
-<input type="radio" name="q10" value="0"> No
+<input type="radio" name="q10" value="Yes"> Yes
+<input type="radio" name="q10" value="No"> No
 
 <p>11. Have you hoped I would come back after a fight?</p>
-<input type="radio" name="q11" value="1"> Yes
-<input type="radio" name="q11" value="0"> No
+<input type="radio" name="q11" value="Yes"> Yes
+<input type="radio" name="q11" value="No"> No
 
-<p>12. Did I ever make you feel that I'm important in your life?</p>
-<input type="radio" name="q12" value="1"> Yes
-<input type="radio" name="q12" value="0"> No
+<p>12. Did I make you feel that I'm important in your life?</p>
+<input type="radio" name="q12" value="Yes"> Yes
+<input type="radio" name="q12" value="No"> No
 
 <p>13. Have you ever cried for me?</p>
-<input type="radio" name="q13" value="1"> Yes
-<input type="radio" name="q13" value="0"> No
+<input type="radio" name="q13" value="Yes"> Yes
+<input type="radio" name="q13" value="No"> No
 
 <p>14. Have you ever felt that I am enough for you?</p>
-<input type="radio" name="q14" value="1"> Yes
-<input type="radio" name="q14" value="0"> No
+<input type="radio" name="q14" value="Yes"> Yes
+<input type="radio" name="q14" value="No"> No
 
 <p>15. If everyone you cared about was still in your life, would I still be the one you want most?</p>
-<input type="radio" name="q15" value="1"> Yes
-<input type="radio" name="q15" value="0"> No
+<input type="radio" name="q15" value="Yes"> Yes
+<input type="radio" name="q15" value="No"> No
 
 <br><br>
 
-<button type="button" onclick="calculate()">See Result ❤️</button>
+<button type="submit" onclick="calculate()">See Result ❤️</button>
 
 </form>
 
@@ -122,8 +122,9 @@ let score = 0;
 
 for(let i=1;i<=15;i++){
 let q=document.querySelector('input[name="q'+i+'"]:checked');
-if(q){
-score+=parseInt(q.value);
+
+if(q && q.value=="Yes"){
+score++;
 }
 }
 
@@ -135,7 +136,7 @@ document.getElementById("result").innerHTML =
 let msg="";
 
 if(percent>=90){
-msg="😍 Wow! That's true love. You really care about me.";
+msg="😍 Wow Abbu Ma! That's true love.";
 }
 else if(percent>=70){
 msg="🥰 There is a lot of love between us.";
