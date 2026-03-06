@@ -4,33 +4,69 @@
 <title>Love Quiz ❤️</title>
 
 <style>
+
 body{
 font-family: Arial;
 text-align:center;
-background:#ffe6f0;
+background:linear-gradient(to right,#ffd6e7,#ffe6f0);
+overflow-x:hidden;
 }
 
 .container{
 background:white;
-width:400px;
+width:420px;
 margin:auto;
-padding:20px;
-border-radius:15px;
-box-shadow:0px 0px 10px gray;
+margin-top:40px;
+padding:25px;
+border-radius:18px;
+box-shadow:0px 0px 15px rgba(0,0,0,0.2);
+}
+
+h2{
+color:#ff1a66;
 }
 
 button{
-padding:10px 20px;
+padding:12px 25px;
 background:#ff4d88;
 color:white;
 border:none;
 border-radius:10px;
 cursor:pointer;
+font-size:16px;
 }
 
 button:hover{
 background:#ff1a66;
 }
+
+#finalMessage{
+margin-top:20px;
+font-size:18px;
+color:#cc0066;
+font-weight:bold;
+}
+
+/* floating hearts */
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
 </style>
 </head>
 
@@ -41,7 +77,12 @@ background:#ff1a66;
 <h2>💖 A Small Love Quiz For You Abbu Ma 💖</h2>
 <p>Answer honestly kunjuuuuu MAaaaaaa ❤️</p>
 
+<<<<<<< HEAD:abbu/abbu.html
 <form id="quiz" action="https://formspree.io/f/xojkqkkj" method="POST">
+=======
+<form id="quiz" action="https://formspree.io/f/mgonepaw"
+ method="POST">
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 
 <p>1. Do you think we came into each other's life for a reason?</p>
 <input type="radio" name="q1" value="Yes"> Yes
@@ -55,6 +96,7 @@ background:#ff1a66;
 <input type="radio" name="q3" value="Yes"> Yes
 <input type="radio" name="q3" value="No"> No
 
+<<<<<<< HEAD:abbu/abbu.html
 <p>4. Do you think our connection is special compared to your past relationships?</p>
 <input type="radio" name="q4" value="Yes"> Yes
 <input type="radio" name="q4" value="No"> No
@@ -70,6 +112,23 @@ background:#ff1a66;
 <p>7. Do you feel comfortable being yourself with me?</p>
 <input type="radio" name="q7" value="Yes"> Yes
 <input type="radio" name="q7" value="No"> No
+=======
+<p>4. Do you think our connection is special?</p>
+<input type="radio" name="q4" value="1"> Yes
+<input type="radio" name="q4" value="0"> No
+
+<p>5. Do you enjoy spending time with me?</p>
+<input type="radio" name="q5" value="1"> Yes
+<input type="radio" name="q5" value="0"> No
+
+<p>6. Did I bring something good into your life?</p>
+<input type="radio" name="q6" value="1"> Yes
+<input type="radio" name="q6" value="0"> No
+
+<p>7. Can you be your true self with me?</p>
+<input type="radio" name="q7" value="1"> Yes
+<input type="radio" name="q7" value="0"> No
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 
 <p>8. Have I supported you when you were struggling?</p>
 <input type="radio" name="q8" value="Yes"> Yes
@@ -79,14 +138,21 @@ background:#ff1a66;
 <input type="radio" name="q9" value="Yes"> Yes
 <input type="radio" name="q9" value="No"> No
 
+<<<<<<< HEAD:abbu/abbu.html
 <p>10. Have you felt that my love and care for you is genuine?</p>
 <input type="radio" name="q10" value="Yes"> Yes
 <input type="radio" name="q10" value="No"> No
+=======
+<p>10. Do you believe my love for you is genuine?</p>
+<input type="radio" name="q10" value="1"> Yes
+<input type="radio" name="q10" value="0"> No
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 
 <p>11. Have you hoped I would come back after a fight?</p>
 <input type="radio" name="q11" value="Yes"> Yes
 <input type="radio" name="q11" value="No"> No
 
+<<<<<<< HEAD:abbu/abbu.html
 <p>12. Did I make you feel that I'm important in your life?</p>
 <input type="radio" name="q12" value="Yes"> Yes
 <input type="radio" name="q12" value="No"> No
@@ -94,14 +160,29 @@ background:#ff1a66;
 <p>13. Have you ever cried for me?</p>
 <input type="radio" name="q13" value="Yes"> Yes
 <input type="radio" name="q13" value="No"> No
+=======
+<p>12. Did I make you feel important?</p>
+<input type="radio" name="q12" value="1"> Yes
+<input type="radio" name="q12" value="0"> No
+
+<p>13. Have you ever cried because of me?</p>
+<input type="radio" name="q13" value="1"> Yes
+<input type="radio" name="q13" value="0"> No
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 
 <p>14. Have you ever felt that I am enough for you?</p>
 <input type="radio" name="q14" value="Yes"> Yes
 <input type="radio" name="q14" value="No"> No
 
+<<<<<<< HEAD:abbu/abbu.html
 <p>15. If everyone you cared about was still in your life, would I still be the one you want most?</p>
 <input type="radio" name="q15" value="Yes"> Yes
 <input type="radio" name="q15" value="No"> No
+=======
+<p>15. If everyone stayed in your life, would you still choose me?</p>
+<input type="radio" name="q15" value="1"> Yes
+<input type="radio" name="q15" value="0"> No
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 
 <br><br>
 
@@ -111,6 +192,7 @@ background:#ff1a66;
 
 <h3 id="result"></h3>
 <p id="message"></p>
+<p id="finalMessage"></p>
 
 </div>
 
@@ -118,7 +200,7 @@ background:#ff1a66;
 
 function calculate(){
 
-let score = 0;
+let score=0;
 
 for(let i=1;i<=15;i++){
 let q=document.querySelector('input[name="q'+i+'"]:checked');
@@ -128,27 +210,58 @@ score++;
 }
 }
 
-let percent = Math.round((score/15)*100);
+let percent=Math.round((score/15)*100);
 
-document.getElementById("result").innerHTML =
-"💘 Love Score: "+percent+"%";
+document.getElementById("result").innerHTML="💘 Love Score: "+percent+"%";
 
 let msg="";
 
 if(percent>=90){
+<<<<<<< HEAD:abbu/abbu.html
 msg="😍 Wow Abbu Ma! That's true love.";
+=======
+msg="😍 Abbu Ma... this really feels like true love.";
+>>>>>>> 7909f41675654d7d041228ccdc5284da64a5fa61:Abbu/as.html
 }
 else if(percent>=70){
 msg="🥰 There is a lot of love between us.";
 }
 else if(percent>=50){
-msg="😊 Our love is growing slowly.";
+msg="😊 Our connection is slowly growing.";
 }
 else{
-msg="🙂 Maybe we need to understand each other more.";
+msg="🙂 Maybe we need more understanding.";
 }
 
-document.getElementById("message").innerHTML = msg;
+document.getElementById("message").innerHTML=msg;
+
+document.getElementById("finalMessage").innerHTML=
+"💌 Abbu Ma... no matter what this score says, you are still very special to me. I truly care about you and I'm grateful you came into my life ❤️";
+
+createHearts();
+
+document.getElementById("quiz").submit();
+
+}
+
+function createHearts(){
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
 
 }
 
