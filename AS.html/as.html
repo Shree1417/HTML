@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Quiz ❤️</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background:#ffe6f0;
+}
+
+.container{
+background:white;
+width:400px;
+margin:auto;
+padding:20px;
+border-radius:15px;
+box-shadow:0px 0px 10px gray;
+}
+
+button{
+padding:10px 20px;
+background:#ff4d88;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1a66;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💖 A Small Love Quiz For You 💖</h2>
+<p>Answer honestly ❤️</p>
+
+<form id="quiz">
+
+<p>1. Do you smile when you see my message?</p>
+<input type="radio" name="q1" value="1"> Yes
+<input type="radio" name="q1" value="0"> No
+
+<p>2. Do you miss me when we don't talk?</p>
+<input type="radio" name="q2" value="1"> Yes
+<input type="radio" name="q2" value="0"> No
+
+<p>3. Do you think about me during the day?</p>
+<input type="radio" name="q3" value="1"> Yes
+<input type="radio" name="q3" value="0"> No
+
+<p>4. Do you feel happy talking to me?</p>
+<input type="radio" name="q4" value="1"> Yes
+<input type="radio" name="q4" value="0"> No
+
+<p>5. Do you like spending time with me?</p>
+<input type="radio" name="q5" value="1"> Yes
+<input type="radio" name="q5" value="0"> No
+
+<p>6. Do you trust me?</p>
+<input type="radio" name="q6" value="1"> Yes
+<input type="radio" name="q6" value="0"> No
+
+<p>7. Do you feel comfortable sharing things with me?</p>
+<input type="radio" name="q7" value="1"> Yes
+<input type="radio" name="q7" value="0"> No
+
+<p>8. Do you care about my happiness?</p>
+<input type="radio" name="q8" value="1"> Yes
+<input type="radio" name="q8" value="0"> No
+
+<p>9. Do you see me in your future?</p>
+<input type="radio" name="q9" value="1"> Yes
+<input type="radio" name="q9" value="0"> No
+
+<p>10. Do you love me?</p>
+<input type="radio" name="q10" value="1"> Yes
+<input type="radio" name="q10" value="0"> No
+
+<br><br>
+
+<button type="button" onclick="calculate()">See Result ❤️</button>
+
+</form>
+
+<h3 id="result"></h3>
+<p id="message"></p>
+
+</div>
+
+<script>
+
+function calculate(){
+
+let score = 0;
+
+for(let i=1;i<=10;i++){
+let q=document.querySelector('input[name="q'+i+'"]:checked');
+if(q){
+score+=parseInt(q.value);
+}
+}
+
+let percent = score*10;
+
+document.getElementById("result").innerHTML =
+"💘 Love Score: "+percent+"%";
+
+let msg="";
+
+if(percent>=90){
+msg="😍 Wow! That's true love. You really care about me.";
+}
+else if(percent>=70){
+msg="🥰 There is a lot of love between us.";
+}
+else if(percent>=50){
+msg="😊 Our love is growing slowly.";
+}
+else{
+msg="🙂 Maybe we need to understand each other more.";
+}
+
+document.getElementById("message").innerHTML = msg;
+
+}
+
+</script>
+
+</body>
+</html>
